@@ -15,14 +15,12 @@ video: Chapter 2 - Part 3
  
  
  1) Write down the names of the 6 major primitive types available in C++  here:
- 
- 
- 
- 
- 
- 
- 
- 
+ int
+ float
+ bool
+ double
+ char
+ void
  
  
 2) for each primitive type, write out 3 variable declarations inside the variableDeclaration() function on line 59.
@@ -64,10 +62,27 @@ void variableDeclarations()
 {
     //example:
     int number = 2; //declaration of a variable named "number", that uses the primitive type 'int', and the variable's initial value is '2'
-    
+    int juice = 1;
+    int napkin = 5;
+    int knife = 3;
 
+    float cash = 3.5f;
+    float savings = 120.35f;
+    float shiftHour = 8.5f;
+
+    bool vipStatus = true;
+    bool publicHoliday = false;
+    bool highBandwidth = true;
+
+    double latitude = 41.40338;
+    double longitude = 2.17403;
+    double altitude = 15.9;
+
+    char d = 'd';
+    char e = 'e';
+    char r = 'r';
     
-    ignoreUnused(number); //passing each variable declared to the ignoreUnused() function
+    ignoreUnused(number, juice, napkin, knife, cash, savings, shiftHour, vipStatus, publicHoliday, highBandwidth, latitude, longitude, altitude, d, e, r); //passing each variable declared to the ignoreUnused() function
 }
 
 /*
@@ -84,42 +99,89 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
 /*
  1)
  */
+bool reserveASeat(int peopleCount, float reserveTime, bool premiumSeat = false)
+{
+    ignoreUnused(peopleCount, reserveTime, premiumSeat);
+    return {};
+}
 
 /*
  2)
  */
+void displayAColor(int colorSelection, float displaySecond = 2.f)
+{
+    ignoreUnused(colorSelection, displaySecond);
+}
 
 /*
  3)
  */
+int countPeople(int male, int female)
+{
+    ignoreUnused(male, female);
+    return {};
+}
 
 /*
  4)
  */
+double calculateDifference(double currentData, double originalData = 13.57)
+{
+    ignoreUnused(currentData, originalData);
+    return {};
+}
 
 /*
  5)
  */
+void playATone(float kHzFrequency = 1.f, float level = 0.5f)
+{
+    ignoreUnused(kHzFrequency, level);
+}
 
 /*
  6)
  */
+float calculateTotalAfterTax(float totalBeforeTax, float taxRate = 0.1f)
+{
+    ignoreUnused(totalBeforeTax, taxRate);
+    return {};
+}
 
 /*
  7)
  */
+int calculateAvailableStock(int importStock, int salesCount, int defectiveStock = 0)
+{
+    ignoreUnused(importStock, salesCount, defectiveStock);
+    return {};
+}
 
 /*
  8)
  */
+bool compareCharacter(char newCharacter, char originalCharacter = 'a')
+{
+    ignoreUnused(newCharacter, originalCharacter);
+    return {};
+}
 
 /*
  9)
  */
+bool getVoteResult(int peopleVotedYes, int numberOfPeople)
+{
+    ignoreUnused(peopleVotedYes, numberOfPeople);
+    return {};
+}
 
 /*
  10)
  */
+void displayWelcomeMessage(float displayTime)
+{
+    ignoreUnused(displayTime);
+}
 
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
@@ -141,27 +203,36 @@ int main()
     auto carRented = rentACar(6, 2); 
     
     //1)
+    auto seatReservationStatus = reserveASeat(4, 1.5, true);
     
     //2)
+    displayAColor(3, 4.5);
     
     //3)
+    auto totalPeople = countPeople(3, 5);
     
     //4)
+    auto difference = calculateDifference(23.13);
     
     //5)
+    playATone(3.85);
     
     //6)
+    auto totalAfterTax = calculateTotalAfterTax(199.99);
     
     //7)
+    auto availableStock = calculateAvailableStock(1000, 700, 100);
     
     //8)
+    auto charaterComparisonResult = compareCharacter('s');
     
     //9)
+    auto voteResult = getVoteResult(3, 4);
     
     //10)
+    displayWelcomeMessage(7.5);
     
-    
-    ignoreUnused(carRented);
+    ignoreUnused(carRented, seatReservationStatus, totalPeople, difference, totalAfterTax, availableStock, charaterComparisonResult, voteResult);
     std::cout << "good to go!" << std::endl;
     return 0;    
 }
